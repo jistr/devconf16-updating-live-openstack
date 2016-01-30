@@ -1,0 +1,29 @@
+@startuml
+
+start
+
+while (Some controllers to update?) is (yes)
+
+    :Take one out of cluster;
+
+    :Package update\n(reboot if needed);
+
+    :Rejoin the cluster;
+
+endwhile (no)
+
+:Package update on computes;
+
+while (Some computes need reboot?) is (yes)
+
+    :Remove N from scheduler,\nmigrate VMs away;
+
+    :Package update\n(reboot if needed);
+
+    :Add back to scheduler;
+
+endwhile (no)
+
+stop
+
+@enduml

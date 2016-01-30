@@ -1,0 +1,29 @@
+@startuml
+
+start
+
+:Pin Nova RPC;
+
+:Controller cluster shutdown;
+
+:Controller package updates\n(reboot if needed);
+
+:Start DBs, DB schema update;
+
+:Start remaining cluster services;
+
+while (Computes to upgrade?) is (yes)
+
+    :Remove N from scheduler,\nmigrate VMs away;
+
+    :Package update\n(reboot if needed);
+
+    :Add back to scheduler;
+
+endwhile (no)
+
+:Unpin Nova RPC;
+
+stop
+
+@enduml
