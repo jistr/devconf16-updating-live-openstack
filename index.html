@@ -52,7 +52,7 @@
           <ul>
             <li>Major version upgrades vs. minor version updates</li>
             <li>Updates in TripleO</li>
-            <li>“So what could possibly go wrong?!”</li>
+            <li>What could possibly go wrong?!</li>
             <li>Demo video</li>
           </ul>
         </section>
@@ -153,49 +153,43 @@
         </section>
 
         <section>
-          <h2>“So what could possibly go wrong?!”</h2>
+          <h2>What could possibly go wrong?!</h2>
           <ul>
-            <li>type of issues:
-            <li>process (constraints before update)</li>
-            <li>core openstack (neutron keepalived)</li>
-            <li>templates (network_id / network)</li>
-            <li>puppet/pacemaker interaction</li>
-            <li>pre/post update pacemaker state (constraints)</li>
-            <li>cib update race (https://bugzilla.redhat.com/show_bug.cgi?id=1285485)</li>
-            <li>neutron-netns cleanup and stale keepalived/vrrp processes ( https://bugzilla.redhat.com/show_bug.cgi?id=1286302 )</li>
-            <li>heat replacing resources when you don’t want to (templates migration)</li>
-            <li>“the cloud needs to work after update” (e.g. scaling compute after update)  https://bugzilla.redhat.com/show_bug.cgi?id=1290585</li>
+            <li>Tooling Bugs (Heat network_id/network mapping)</li>
+            <li>Related Bugs (Neutron and L3 HA)</li>
+            <li>Workflow Bugs (Pacemaker constraints)</li>
+            <li>Our own Bugs (UpdateIdentifier)</li>
           </ul>
         </section>
 
         <section>
-          <h2>“So what could possibly go wrong?!”</h2>
-          <ul>
-            <li>“issue replacing the pacemaker cib during an update from a running 7.1 overcloud to 7.2/latest”</li>
-            <li>https://bugzilla.redhat.com/show_bug.cgi?id=1285485</li>
-            <li>mitigated by “Wait for cluster to settle in yum_update.sh” https://review.openstack.org/#/c/259009/</li>
-          </ul>
+          <h2>What could possibly go wrong?!</h2>
+          <p>We don't want a new network, we're just calling it (by) name</p>
+          <p>Involved Heat developers, backporting wasn't trivial</p>
+          <p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1291845">https://bugzilla.redhat.com/show_bug.cgi?id=1291845</a></p>
+          <h5>(Tooling)</h5>
         </section>
 
         <section>
-          <h2>“So what could possibly go wrong?!”</h2>
-          <ul>
-            <li>“neutron-netns-cleanup OCF doesn't clean up radvd or keepalived”</li>
-            <li>https://bugzilla.redhat.com/show_bug.cgi?id=1175251</li>
-            <li> +(https://bugzilla.redhat.com/show_bug.cgi?id=1260298 https://bugzilla.redhat.com/show_bug.cgi?id=1286302 )</li>
-            <li>mitigated by “Update: clean keepalived and radvd instances after pcs cluster stop” https://review.openstack.org/#/c/249171/</li>
-          </ul>
+          <h2>What could possibly go wrong?!</h2>
+          <p>Why is that IP still on the node we killed</p>
+          <p>Involved Neutron developers, newer versions not affected<p>
+          <p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1175251">https://bugzilla.redhat.com/show_bug.cgi?id=1175251</a></p>
+          <h5>(Related)</h5>
         </section>
 
         <section>
-          <h2>“So what could possibly go wrong?!”</h2>
-          <ul>
-            <li>“Scaling out an updated overcloud (7.1->7.2) fails”</li>
-            <li>“the stack status is UPDATE_FAILED after attempting to remove a compute from the overcloud deployment”</li>
-            <li>https://bugzilla.redhat.com/show_bug.cgi?id=1290585</li>
-            <li>https://bugzilla.redhat.com/show_bug.cgi?id=1290572</li>
-            <li>mitigated by correctly setting the updateidentifier (links to reviews needed)</li>
-          </ul>
+          <h2>What could possibly go wrong?!</h2>
+          <p>How come Pacemaker is failing to failover?</p>
+          <p>We need that fix to be in place before we fail over!</p>
+          <h5>(Workflow)</h5>
+        </section>
+
+        <section>
+          <h2>What could possibly go wrong?!</h2>
+          <p>UPDATE_COMPLETE, scaling fails though!</p>
+          <p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1290572">https://bugzilla.redhat.com/show_bug.cgi?id=1290572</a></p>
+          <h5>(Our own)</h5>
         </section>
 
         <section>
