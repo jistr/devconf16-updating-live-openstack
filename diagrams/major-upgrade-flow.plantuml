@@ -12,11 +12,13 @@ start
 
 :Start remaining cluster services;
 
-while (Computes to upgrade?) is (yes)
+:Package update on computes;
 
-    :Remove N from scheduler,\nmigrate VMs away;
+while (Some computes need reboot?) is (yes)
 
-    :Package update\n(reboot if needed);
+    :Remove N from scheduler,\nlive-migrate VMs away;
+
+    :Reboot;
 
     :Add back to scheduler;
 

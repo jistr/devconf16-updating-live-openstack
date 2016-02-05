@@ -16,9 +16,9 @@ endwhile (no)
 
 while (Some computes need reboot?) is (yes)
 
-    :Remove N from scheduler,\nmigrate VMs away;
+    :Remove N from scheduler,\nlive-migrate VMs away;
 
-    :Package update\n(reboot if needed);
+    :Reboot;
 
     :Add back to scheduler;
 
