@@ -169,6 +169,7 @@
         <section>
           <h2>What could possibly go wrong?!</h2>
           <p>We don't want a new network, we're just calling it (by) name</p>
+          <p>network_id <-> network (name) mapping</p>
           <p>Heat developers helped, we had to backport the fix into the stable branch</p>
           <p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1291845">https://bugzilla.redhat.com/show_bug.cgi?id=1291845</a></p>
           <h5>(Tooling)</h5>
@@ -177,6 +178,7 @@
         <section>
           <h2>What could possibly go wrong?!</h2>
           <p>How come Pacemaker is failing to failover the services?</p>
+          <p>Services fail to stop</p>
           <p>HA people helped, we needed to fix the constraints to shutdown cleanly!</p>
           <h5>(Workflow)</h5>
         </section>
@@ -184,7 +186,8 @@
         <section>
           <h2>What could possibly go wrong?!</h2>
           <p>Why is that IP still on the node we supposedly killed?</p>
-          <p>Neutron developers helped, newer version wasn't affected<p>
+          <p>Neutron agents were down but keepalived was still running </p>
+          <p>Neutron developers helped, newer version wasn't affected</p>
           <p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1175251">https://bugzilla.redhat.com/show_bug.cgi?id=1175251</a></p>
           <h5>(Subtle)</h5>
         </section>
