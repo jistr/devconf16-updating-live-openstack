@@ -154,7 +154,7 @@
           <h2>What could possibly go wrong?!</h2>
           <p>Nothing, in four different ways!</p>
           <ul>
-            <li>Gloomy Bugs (Heat network_id/network mapping)</li>
+            <li>Tooling Bugs (Heat network_id/network mapping)</li>
             <li>Workflow Bugs (Pacemaker constraints)</li>
             <li>Subtle Bugs (Neutron L3 HA)</li>
             <li>Evil Bugs (UpdateIdentifier)</li>
@@ -164,22 +164,22 @@
         <section>
           <h2>What could possibly go wrong?!</h2>
           <p>We don't want a new network, we're just calling it (by) name</p>
-          <p>Heat developers helped, backporting the fix wasn't trivial</p>
+          <p>Heat developers helped, we had to backport the fix into the stable branch</p>
           <p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1291845">https://bugzilla.redhat.com/show_bug.cgi?id=1291845</a></p>
-          <h5>(Gloomy)</h5>
+          <h5>(Tooling)</h5>
         </section>
 
         <section>
           <h2>What could possibly go wrong?!</h2>
           <p>How come Pacemaker is failing to failover the services?</p>
-          <p>We needed to fix the constraints to failover successfully!</p>
+          <p>HA people helped, we needed to fix the constraints to shutdown cleanly!</p>
           <h5>(Workflow)</h5>
         </section>
 
         <section>
           <h2>What could possibly go wrong?!</h2>
           <p>Why is that IP still on the node we supposedly killed?</p>
-          <p>Neutron developers helped, newer versions wasn't in fact affected<p>
+          <p>Neutron developers helped, newer version wasn't affected<p>
           <p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1175251">https://bugzilla.redhat.com/show_bug.cgi?id=1175251</a></p>
           <h5>(Subtle)</h5>
         </section>
@@ -187,13 +187,21 @@
         <section>
           <h2>What could possibly go wrong?!</h2>
           <p>UPDATE_COMPLETE, scaling fails though!</p>
-          <p>Luckily there is more people testing this all</p>
+          <p>Luckily there is people testing this all</p>
           <p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1290572">https://bugzilla.redhat.com/show_bug.cgi?id=1290572</a></p>
           <h5>(Evil)</h5>
         </section>
 
         <section>
           <h2>Demo Video</h2>
+        </section>
+
+        <section>
+          <h2>We're getting better at it</h2>
+          <ul>
+            <li>Puppet modules distributed via the Undercloud</li>
+            <li>Update instructions bounded to the service</li>
+          </ul>
         </section>
 
       </div>
