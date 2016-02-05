@@ -111,8 +111,8 @@
                 <li><code>openstack overcloud update stack overcloud -i --templates -e overcloud-resource-registry-puppet.yaml -e …</code></li>
               </ul>
             </li>
-            <li>Sets pre-update hook on each node – heat native feature. Also sets the UpdateIdentifier.</li>
-            <li>Need the update to proceed one node at a time</li>
+            <li>Sets pre-update hook on each node – heat native feature. </li>
+            <li>Also sets the UpdateIdentifier. Need the update to proceed one node at a time. </li>
           </ul>
         </section>
 
@@ -127,15 +127,11 @@
         <section>
           <h2>Controller Node</h2>
           <ul>
-            <li>On one controller at a time, (breakpoints mainly for this)
-</li>
-            <li>Matching pre/post update environments</li>
-            <li>puppet will rerun, but only after packages are updated and it’s too late</li>
-            <li>Example the neutron constraints.</li>
-            <li>Stop the cluster on that controller. </li>
-            <li>maintenance mode</li>
+            <li>On one controller at a time, (breakpoints mainly for this).</li>
+            <li>Matching pre/post update environments (example the neutron pacemaker constraints).</li>
+            <li>Stop the cluster on that controller, maintenance mode</li>
             <li>Yum update</li>
-            <li>Cluster up</li>
+            <li>Rejoin the cluster</li>
           </ul>
         </section>
 
