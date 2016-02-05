@@ -150,42 +150,44 @@
 
         <section>
           <h2>What could possibly go wrong?!</h2>
+          <p>Nothing, in at least four different ways!</p>
           <ul>
-            <li>Tooling Bugs (Heat network_id/network mapping)</li>
-            <li>Related Bugs (Neutron and L3 HA)</li>
+            <li>Gloomy Bugs (Heat network_id/network mapping)</li>
+            <li>Subtle Bugs (Neutron L3 HA)</li>
             <li>Workflow Bugs (Pacemaker constraints)</li>
-            <li>Our own Bugs (UpdateIdentifier)</li>
+            <li>Evil Bugs (UpdateIdentifier)</li>
           </ul>
         </section>
 
         <section>
           <h2>What could possibly go wrong?!</h2>
           <p>We don't want a new network, we're just calling it (by) name</p>
-          <p>Involved Heat developers, backporting wasn't trivial</p>
+          <p>Heat developers helped us, backporting the fix wasn't trivial</p>
           <p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1291845">https://bugzilla.redhat.com/show_bug.cgi?id=1291845</a></p>
-          <h5>(Tooling)</h5>
+          <h5>(Gloomy)</h5>
         </section>
 
         <section>
           <h2>What could possibly go wrong?!</h2>
-          <p>Why is that IP still on the node we killed</p>
-          <p>Involved Neutron developers, newer versions not affected<p>
+          <p>Why is that IP still on the node we killed?</p>
+          <p>Neutron developers helped us, newer versions wasn't in fact affected<p>
           <p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1175251">https://bugzilla.redhat.com/show_bug.cgi?id=1175251</a></p>
-          <h5>(Related)</h5>
+          <h5>(Subtle)</h5>
         </section>
 
         <section>
           <h2>What could possibly go wrong?!</h2>
-          <p>How come Pacemaker is failing to failover?</p>
-          <p>We need that fix to be in place before we fail over!</p>
+          <p>How come Pacemaker is failing to failover the services?</p>
+          <p>We needed the fix before we triggered the fail over!</p>
           <h5>(Workflow)</h5>
         </section>
 
         <section>
           <h2>What could possibly go wrong?!</h2>
           <p>UPDATE_COMPLETE, scaling fails though!</p>
+          <p>Luckily there is people testing it all</p>
           <p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1290572">https://bugzilla.redhat.com/show_bug.cgi?id=1290572</a></p>
-          <h5>(Our own)</h5>
+          <h5>(Evil)</h5>
         </section>
 
         <section>
